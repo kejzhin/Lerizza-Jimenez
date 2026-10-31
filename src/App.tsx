@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SkillsSection from './components/SkillsSection';
+import ToolsetSection from './components/ToolsetSection';
 import ExperienceSection from './components/ExperienceSection';
-import WorkShowcaseSection from './components/WorkShowcaseSection';
 import TechnicalSetupSection from './components/TechnicalSetupSection';
 import EducationSection from './components/EducationSection';
 import ContactSection from './components/ContactSection';
@@ -42,11 +42,11 @@ export default function App() {
         {/* Technical & Operational Skills */}
         <SkillsSection />
 
+        {/* Software & Digital Toolset */}
+        <ToolsetSection />
+
         {/* Chronological Work Experience */}
         <ExperienceSection />
-
-        {/* Interactive Work Showcase & Shopify Builder Demo */}
-        <WorkShowcaseSection />
 
         {/* Remote Work Technical Setup & Hardware Specs */}
         <TechnicalSetupSection />
