@@ -79,7 +79,7 @@ export default function ToolsetSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mb-12 space-y-3"
+          className="max-w-3xl mb-12 space-y-3 text-center sm:text-left mx-auto sm:mx-0"
         >
           <div className="text-xs font-bold tracking-wider text-pink-400 uppercase">
             SOFTWARE & PLATFORM PROFICIENCY

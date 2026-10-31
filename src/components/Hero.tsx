@@ -8,38 +8,38 @@ export default function Hero() {
   const resumeUrl = "/assets/aistudio/leriza.pdf";
 
   return (
-    <section id="home" className="pt-28 pb-16 bg-[#18030e] text-pink-100 border-b border-pink-950/60">
+    <section id="home" className="pt-24 sm:pt-28 pb-14 sm:pb-16 bg-[#18030e] text-pink-100 border-b border-pink-950/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         
         {/* Split Screen Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
           
           {/* Left Column (7 cols): Typographic Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
             <div className="space-y-4">
               {/* Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
                 Lerriza Jimenez
               </h1>
-              <p className="text-lg sm:text-xl font-semibold text-pink-300">
+              <p className="text-base sm:text-xl font-semibold text-pink-300">
                 Detail-Oriented Administrative & Shopify Product Operations
               </p>
 
               {/* Professional Summary from CV */}
-              <p className="text-base sm:text-lg text-pink-100/90 leading-relaxed font-normal">
+              <p className="text-sm sm:text-lg text-pink-100/90 leading-relaxed font-normal">
                 {PORTFOLIO_DATA.profile.summary}
               </p>
 
               {/* Action Buttons: Resume & Contact */}
-              <div className="flex flex-wrap items-center gap-3 pt-3">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-3">
                 <button
                   onClick={() => setShowPdfModal(true)}
-                  className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold text-white bg-pink-600 hover:bg-pink-500 rounded-full transition-all shadow-md shadow-pink-950/60 hover:scale-105"
+                  className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold text-white bg-pink-600 hover:bg-pink-500 rounded-full transition-all shadow-md shadow-pink-950/60 hover:scale-105"
                 >
                   <FileText className="w-4 h-4" />
                   <span>View Resume</span>
@@ -47,7 +47,7 @@ export default function Hero() {
 
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold text-pink-100 hover:text-white bg-[#220716] hover:bg-[#2e091e] border border-pink-900/60 rounded-full transition-all hover:scale-105"
+                  className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-bold text-pink-100 hover:text-white bg-[#220716] hover:bg-[#2e091e] border border-pink-900/60 rounded-full transition-all hover:scale-105"
                 >
                   <Mail className="w-4 h-4 text-pink-400" />
                   <span>Contact Me</span>
@@ -66,7 +66,7 @@ export default function Hero() {
             <img
               src={PORTFOLIO_DATA.profile.picturePath}
               alt="Lerriza Jimenez Professional Portrait"
-              className="w-full max-h-[520px] object-contain"
+              className="w-full max-h-[380px] sm:max-h-[480px] lg:max-h-[520px] object-contain"
               onError={(e) => {
                 (e.target as HTMLElement).style.display = 'none';
               }}
@@ -79,7 +79,7 @@ export default function Hero() {
 
       {/* Resume Viewer Modal */}
       {showPdfModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-sm">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -87,18 +87,18 @@ export default function Hero() {
             className="bg-[#1e0513] border border-pink-900/60 rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden shadow-2xl"
           >
             {/* Modal Header */}
-            <div className="p-4 bg-[#13020b] border-b border-pink-950 flex items-center justify-between">
-              <div className="flex items-center gap-2 text-white font-bold text-sm sm:text-base">
-                <FileText className="w-5 h-5 text-pink-500" />
-                <span>Lerriza Jimenez - Resume</span>
+            <div className="p-3 sm:p-4 bg-[#13020b] border-b border-pink-950 flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 text-white font-bold text-xs sm:text-base truncate">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-pink-500 shrink-0" />
+                <span className="truncate">Lerriza Jimenez - Resume</span>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <a
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 text-xs font-semibold text-pink-200 hover:text-white bg-[#220716] border border-pink-900/60 rounded-lg flex items-center gap-1.5"
+                  className="px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-pink-200 hover:text-white bg-[#220716] border border-pink-900/60 rounded-lg flex items-center gap-1.5"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span className="hidden sm:inline">Open in New Tab</span>
@@ -107,7 +107,7 @@ export default function Hero() {
                 <a
                   href={resumeUrl}
                   download="Lerriza_Jimenez_CV.pdf"
-                  className="px-3 py-1.5 text-xs font-semibold text-white bg-pink-600 hover:bg-pink-500 rounded-lg flex items-center gap-1.5"
+                  className="px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-white bg-pink-600 hover:bg-pink-500 rounded-lg flex items-center gap-1.5"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span className="hidden sm:inline">Download</span>
@@ -116,6 +116,7 @@ export default function Hero() {
                 <button
                   onClick={() => setShowPdfModal(false)}
                   className="p-1.5 text-pink-300 hover:text-white hover:bg-pink-950/60 rounded-lg transition-colors"
+                  aria-label="Close Modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -129,8 +130,8 @@ export default function Hero() {
                 type="application/pdf"
                 className="w-full h-full"
               >
-                <div className="p-8 text-center text-pink-200 flex flex-col items-center justify-center h-full space-y-4">
-                  <p className="text-sm sm:text-base">Your browser doesn't support embedded PDF preview.</p>
+                <div className="p-6 text-center text-pink-200 flex flex-col items-center justify-center h-full space-y-4">
+                  <p className="text-xs sm:text-base">Your mobile browser doesn't support embedded PDF preview.</p>
                   <a
                     href={resumeUrl}
                     target="_blank"
